@@ -1,0 +1,374 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test Sistemas Informáticos</title>
+<style>
+:root{--bg:#fff;--text:#1f1e1d;--text-secondary:#6b6a66;--surface-1:#f1efe8;--border-strong:#b4b2a9;--radius:10px;--font-mono:ui-monospace,Menlo,monospace;
+--bg-accent:#e6f0fb;--text-accent:#185fa5;--border-accent:#85b7eb;--bg-success:#e8f5e0;--text-success:#2f6b10;--border-success:#97c459;
+--bg-danger:#fcebeb;--text-danger:#a32d2d;--border-danger:#f09595;--bg-warning:#faeeda;--text-warning:#854f0b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1e1d;--text:#ecebe6;--text-secondary:#a8a69f;--surface-1:#2c2c2a;--border-strong:#5f5e5a;
+--bg-accent:#0c447c;--text-accent:#b5d4f4;--border-accent:#378add;--bg-success:#27500a;--text-success:#c0dd97;--border-success:#639922;
+--bg-danger:#791f1f;--text-danger:#f7c1c1;--border-danger:#e24b4a;--bg-warning:#633806;--text-warning:#fac775}}
+:root[data-theme="dark"]{--bg:#1f1e1d;--text:#ecebe6;--text-secondary:#a8a69f;--surface-1:#2c2c2a;--border-strong:#5f5e5a;
+--bg-accent:#0c447c;--text-accent:#b5d4f4;--border-accent:#378add;--bg-success:#27500a;--text-success:#c0dd97;--border-success:#639922;
+--bg-danger:#791f1f;--text-danger:#f7c1c1;--border-danger:#e24b4a;--bg-warning:#633806;--text-warning:#fac775}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:720px;padding:16px;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,sans-serif}
+h1{font-size:20px;font-weight:600;margin:0 0 12px}
+button{font:inherit;color:var(--text);background:transparent;border:1px solid var(--border-strong);border-radius:var(--radius);padding:8px 14px;cursor:pointer}
+button:disabled{cursor:default;opacity:1}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+details{margin-top:24px;border-top:1px solid var(--border-strong);padding-top:12px}
+summary{font-weight:600;font-size:17px;cursor:pointer;margin-bottom:10px}
+</style></head><body>
+<h1>Test de Sistemas Informáticos</h1>
+<h2 class="sr-only">Test amplio de Sistemas Informáticos por temas, con explicación de cada respuesta</h2>
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.chip{font-size:12px;padding:4px 10px;border-radius:999px;border:0.5px solid var(--border-strong);background:transparent;color:var(--text-secondary);cursor:pointer;height:auto}
+.chip.on{background:var(--bg-accent);color:var(--text-accent);border-color:var(--border-accent)}
+.bar{height:4px;background:var(--surface-1);border-radius:2px;margin:0 0 6px}
+.bar i{display:block;height:4px;background:var(--text-accent);border-radius:2px;transition:width .2s}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--text-secondary);margin:0 0 10px}
+.q{font-size:16px;font-weight:500;line-height:1.5;margin:0 0 12px}
+.opt{display:block;width:100%;text-align:left;padding:10px 12px;margin:0 0 8px;border-radius:var(--radius);font-size:14px;line-height:1.45;height:auto;white-space:normal}
+.opt.ok{background:var(--bg-success);border-color:var(--border-success);color:var(--text-success)}
+.opt.bad{background:var(--bg-danger);border-color:var(--border-danger);color:var(--text-danger)}
+.why{display:block;font-size:12px;margin-top:4px;color:var(--text-secondary)}
+.opt.bad .why{color:var(--text-danger)}
+.fb{border-radius:var(--radius);padding:10px 12px;font-size:14px;line-height:1.55;margin:4px 0 12px;background:var(--surface-1)}
+.fb b{font-weight:500}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.sc{background:var(--surface-1);border-radius:var(--radius);padding:12px 14px;font-size:14px;line-height:1.6;margin:0 0 10px}
+</style>
+<div id="app"></div>
+<script>
+var Q=[];
+function c(s,q,r,w,e){Q.push({s:s,q:q,r:r,w:w,e:e})}
+var H="Historia",T="Tipos",C="Componentes",B="Buses y canales",M="Memoria",N="Binario",L="ALU y lógica",U="Unidad de control",D="Discos",A="Archivos";
+c(H,"¿Cómo se llama la primera calculadora electromecánica, creada por Harvard y presentada en 1944?","Mark I",[["ENIAC","Fue la primera electrónica (Pensilvania, 1945)."],["UNIVAC-1","Fue la primera comercial."],["IBM 701","Es el ejemplo de tubos de vacío de 1946."]],"El Mark I usaba relés mecánicos: electromecánico, no electrónico.");
+c(H,"¿Qué máquina hacía los cálculos con relés mecánicos?","Mark I",[["ENIAC","Usaba tubos de vacío."],["UNIVAC-1","Usaba tubos y cinta magnética."],["Un ordenador de 2ª generación","Usaba transistores."]],"Mismo dato visto al revés: relés = Mark I (5 t y 3.300 relés según tu PDF).");
+c(H,"¿Qué componente caracteriza al ENIAC (1945)?","Tubos de vacío",[["Relés mecánicos","Eso era el Mark I."],["Transistores","Se inventaron en 1948."],["Circuitos integrados","Son de 1964."]],"El ENIAC fue la primera calculadora electrónica (1ª generación).");
+c(H,"¿Qué universidad desarrolló el ENIAC?","Pensilvania",[["Harvard","Harvard hizo el Mark I."],["Oxford","No aparece en tus apuntes."],["MIT","No aparece en tus apuntes."]],"Harvard → Mark I. Pensilvania → ENIAC.");
+c(H,"¿En qué estaba especializado el ENIAC?","En balística",[["En contabilidad comercial","Lo comercial llegó con el UNIVAC-1."],["En redes","Las redes son de la 4ª generación."],["En diseño de alas de avión","Ese ejemplo es del IBM 701."]],"Dato concreto que suele caer.");
+c(H,"¿Qué diferencia al ENIAC del Mark I respecto a las instrucciones?","El ENIAC no almacenaba instrucciones: se le daban una a una por un tablero",[["El ENIAC guardaba el programa en memoria","Es lo contrario."],["El Mark I no usaba instrucciones","Las leía de cinta perforada."],["El ENIAC leía cinta magnética","Eso es del UNIVAC-1."]],"Después su equipo concibió una máquina con instrucciones almacenadas y binario (presentada en 1952).");
+c(H,"¿En qué año se presentó la máquina que almacenaba instrucciones y usaba binario?","1952",[["1944","Es el Mark I."],["1945","Es el ENIAC."],["1964","Es la 3ª generación."]],"La concibió el mismo equipo del ENIAC.");
+c(H,"¿Cuál fue la primera calculadora comercial?","UNIVAC-1",[["Mark I","Era de Harvard, no comercial."],["ENIAC","Era experimental."],["IBM 701","No se cita como la primera comercial."]],"Usaba cinta magnética y procesaba datos alfanuméricos.");
+c(H,"¿Qué usaba el UNIVAC-1 para la entrada y salida de datos?","Cinta magnética",[["Tablero de conmutadores","Eso era el ENIAC."],["Cinta de papel perforada","Eso era el Mark I."],["Disco duro","No aparece así en tus apuntes."]],"Su gran novedad: datos alfanuméricos.");
+c(H,"¿Cuál fue la gran novedad del UNIVAC-1?","Procesar datos alfanuméricos",[["Usar transistores","Eso es 2ª generación."],["Multiprogramación","Es 3ª generación."],["Conectarse en red","Es 4ª generación."]],"Sigue siendo 1ª generación.");
+c(H,"¿Por qué el transistor sustituyó al tubo de vacío?","Era más barato, más pequeño y generaba menos calor",[["Era más grande pero más potente","Era más pequeño."],["Consumía más pero era más rápido","Generaba menos calor."],["Almacenaba instrucciones","No tiene que ver."]],"Provocó una revolución en la arquitectura de los ordenadores.");
+c(H,"¿En qué año se crea el transistor?","1948",[["1959","Es cuando empiezan las máquinas de 2ª generación."],["1945","Es el ENIAC."],["1964","Es la 3ª generación."]],"Inventado en 1948, producción masiva unos 10 años después.");
+c(H,"¿Desde qué año se construyen las máquinas de 2ª generación?","1959",[["1948","Es la invención del transistor."],["1964","Es la 3ª."],["1952","Es la máquina con instrucciones almacenadas."]],"Tardó unos 10 años en poder producirse en masa.");
+c(H,"¿Qué generación usa transistores?","La 2ª",[["La 1ª","Tubos de vacío."],["La 3ª","Circuitos integrados."],["La 4ª","Redes."]],"1ª tubos, 2ª transistor, 3ª integrados, 4ª redes.");
+c(H,"¿Cuál es el orden correcto de las generaciones?","Tubos de vacío → transistor → circuitos integrados → redes",[["Transistor → tubos → redes → integrados","Los tubos son lo primero."],["Tubos → integrados → transistor → redes","El transistor va antes que los integrados."],["Redes → integrados → transistor → tubos","Está al revés."]],"Después vienen la 5ª y la 6ª con internet y multinúcleo.");
+c(H,"¿Cuál de estas máquinas NO es de 1ª generación?","Un ordenador con transistores",[["ENIAC","Es 1ª generación (tubos)."],["UNIVAC-1","Es 1ª generación."],["IBM 701","Es de tubos de vacío (1946)."]],"Transistor = 2ª generación.");
+c(H,"¿Qué caracteriza a la 3ª generación (1964)?","Microcircuitos integrados de estado sólido, multiprogramación y familias de ordenadores",[["Tubos y relés","Es la 1ª."],["Transistores sueltos","Es la 2ª."],["Internet","Es la 5ª y 6ª."]],"Gran desarrollo del software y de los sistemas operativos.");
+c(H,"¿En qué generación aparecen las familias de ordenadores?","En la 3ª",[["En la 1ª","No."],["En la 2ª","No."],["En la 4ª","La 4ª son redes."]],"Junto con multiprogramación y multiproceso.");
+c(H,"¿Qué aparece con la 4ª generación?","Las redes de ordenadores",[["El transistor","Es de 1948."],["Los circuitos integrados","Son de 1964."],["Los tubos de vacío","Son la 1ª."]],"5ª y 6ª: internet y procesadores multinúcleo.");
+c(H,"¿Con qué se asocian la 5ª y 6ª generación?","Con internet y los procesadores de varios núcleos",[["Con los relés","Son del Mark I."],["Con el transistor","Es la 2ª."],["Con las familias de ordenadores","Es la 3ª."]],"Tu PDF añade: interconexión de redes con distintos protocolos.");
+c(H,"Aunque el transistor se inventó en 1948, ¿cuánto se esperó para su producción masiva?","Unos 10 años",[["Unos 2 años","Fue más."],["Unos 30 años","Fue menos."],["No hubo espera","Sí la hubo."]],"Por eso la 2ª generación empieza en 1959.");
+c(H,"En 1956, la lógica de estado sólido metía circuitos en módulos de cerámica de media pulgada que se activaban en...","600 nanosegundos",[["600 segundos","Sería lentísimo."],["6 milisegundos","No es el dato."],["60 microsegundos","No es el dato."]],"Etapa de 1956 en tus apuntes.");
+c(H,"¿En qué se basan los circuitos integrados de 1970?","En la tecnología monolítica a gran escala, no solo en transistores",[["Solo en transistores","Tus apuntes dicen que no exclusivamente."],["En tubos miniaturizados","No."],["En relés","No."]],"Etapas: 1946 tubo, 1948 transistor, 1956 estado sólido, 1970 integrados.");
+c(H,"Con un IBM 701 (tubos de vacío, 1946), un trabajo de ingeniería tardaba...","1 hora, frente a unos 7 años",[["7 horas frente a 1 año","No."],["1 día frente a 7 meses","No."],["7 años frente a 1 hora","Al revés."]],"Muestra el salto de velocidad de las máquinas electrónicas.");
+c(T,"Un cálculo se divide en 3 pasos. ¿Cuál es el más importante?","La realización de los cálculos (el 2º)",[["Obtener los datos","Es el 1º."],["Obtener los resultados","Es el 3º."],["Guardar el programa","No es uno de los 3."]],"Datos → cálculos → resultados.");
+c(T,"¿De qué dos maneras se puede hacer el cálculo?","Analógica y digital",[["Manual y automática","No es la clasificación."],["Serie y paralelo","Son tipos de circuito."],["Síncrona y asíncrona","Son tipos de biestable."]],"Los ordenadores se basan en las dos.");
+c(T,"¿Qué principio usan los ordenadores analógicos?","Variaciones continuas de corriente o voltaje",[["Valores discretos","Eso es digital."],["Contar","Eso es digital."],["Mezclar ambos","Eso es híbrido."]],"Asignan valores a fenómenos físicos de variación continua.");
+c(T,"¿Qué ordenadores necesitan un diseño específico para cada problema?","Los analógicos",[["Los digitales","Son de propósito general."],["Los híbridos","No es lo que dicen tus apuntes."],["Ninguno","Los analógicos sí."]],"Dato clave del analógico.");
+c(T,"¿Cómo calculan los ordenadores digitales?","Contando variaciones discretas de componentes físicos",[["Con variaciones continuas","Es analógico."],["Solo con relés","No."],["No calculan","Sí calculan."]],"Hoy la mayoría son digitales.");
+c(T,"Hoy en día, la mayoría de ordenadores son...","Digitales",[["Analógicos","Son minoría."],["Híbridos","Existen, pero no son mayoría."],["Electromecánicos","Eso era el Mark I."]],"Algunos combinan ambas tecnologías: híbridos.");
+c(T,"Un ordenador con tecnología analógica y digital a la vez es...","Híbrido",[["Doble","No existe ese término."],["Mixto-lógico","No existe."],["Multiprocesador","Tiene varios procesadores, no mezcla tecnologías."]],"Híbrido = analógico + digital.");
+c(T,"¿Cuál de estas afirmaciones es FALSA?","Los analógicos representan los números con valores discretos",[["Los digitales calculan por conteo","Es verdadera."],["Los analógicos usan variaciones continuas","Es verdadera."],["Los híbridos usan ambas tecnologías","Es verdadera."]],"Discreto = digital. Continuo = analógico.");
+c(C,"¿Cuántas unidades tiene básicamente un ordenador?","6",[["3","3 son las que forman la CPU."],["4","No."],["8","No."]],"Entrada, salida, almacenamiento externo, control, ALU y memoria principal.");
+c(C,"¿Qué unidades forman la CPU?","Unidad de control, ALU y memoria principal",[["Entrada, salida y almacenamiento externo","Son los periféricos."],["ALU, teclado y monitor","Teclado y monitor son periféricos."],["Memoria, disco duro y ALU","El disco es almacenamiento externo."]],"Las otras 3 son los periféricos.");
+c(C,"¿Cuál de estas NO forma parte de la CPU?","El almacenamiento externo",[["La unidad de control","Sí forma parte."],["La ALU","Sí forma parte."],["La memoria principal","Sí forma parte, según tus apuntes."]],"El almacenamiento externo es un periférico.");
+c(C,"¿Qué son los periféricos?","Dispositivos de entrada, salida o almacenamiento externo conectados a la CPU",[["Las unidades de la CPU","No."],["Solo teclado y ratón","También salida y almacenamiento."],["Los buses internos","No."]],"Se conectan a la CPU por cables.");
+c(C,"¿Por qué la CPU necesita periféricos?","Porque sin ellos no puede comunicarse con el hombre ni procesar información significativa",[["Para enfriarse","No."],["Porque no tiene ALU","Sí la tiene."],["Para generar el reloj","No."]],"Por eso hay entrada, salida y almacenamiento externo.");
+c(C,"¿Qué es un microprocesador?","Un circuito integrado que contiene la CPU",[["La placa base","Es el microcomputador."],["El conjunto con periféricos","Es el microordenador."],["Solo la RAM","No."]],"Por sí solo no puede hacer nada.");
+c(C,"Microprocesador + RAM + ROM + entrada/salida =","Microcomputador (placa base)",[["Microordenador","Es + periféricos."],["CPU","Es control + ALU + memoria."],["Periférico","No."]],"Escalera: micro → microcomputador → microordenador.");
+c(C,"Microcomputador + periféricos =","Microordenador",[["Microprocesador","Es solo el chip."],["Placa base","Es sin periféricos."],["Mainframe","No aparece."]],"Periféricos típicos: ratón, teclado, monitor, discos, DVD, impresora.");
+c(C,"¿Cómo se llaman las líneas de conexión con el exterior del microprocesador?","Puertos",[["Buses de control","No."],["Canales","Los canales son para periféricos."],["Flags","Son señales de la ALU."]],"Las proporcionan los circuitos de entrada y salida.");
+c(C,"Un periférico por el que SOLO obtenemos datos es de...","Salida",[["Entrada","Solo introduce datos."],["Entrada/salida","Introduce y obtiene."],["Control","No es un tipo de periférico."]],"Ej.: monitor, impresora.");
+c(C,"Un periférico que permite introducir y obtener datos, como un disco duro, es de...","Entrada/salida",[["Entrada","Solo introduce."],["Salida","Solo obtiene."],["CPU","No es periférico."]],"3 tipos: entrada, salida y entrada/salida.");
+c(C,"¿Qué hace el acumulador?","Almacena el resultado de las operaciones de la ALU",[["Indica la siguiente instrucción","Es el contador de programa."],["Guarda el código de la instrucción","Es el registro de instrucción."],["Genera señales de ejecución","Es la unidad de control."]],"Registro de resultados de la ALU.");
+c(C,"Registro donde queda el resultado de una suma de la ALU:","Acumulador",[["Puntero del stack","Guarda direcciones de retorno."],["Registro de instrucción","Guarda el código de la instrucción."],["Flag","Es una señal, no un resultado."]],"Mismo concepto, al revés.");
+c(C,"¿Qué indica el contador de programa?","La dirección de memoria de la siguiente instrucción",[["El resultado de la suma","Es el acumulador."],["El retorno de subrutinas","Es el puntero del stack."],["El estado del resultado","Son los flags."]],"Así la CPU sabe qué ejecutar.");
+c(C,"¿Qué almacena el registro de instrucción?","El código de la instrucción a ejecutar",[["La siguiente dirección","Es el contador de programa."],["El resultado de la ALU","Es el acumulador."],["El reloj","No."]],"La unidad de control lo decodifica.");
+c(C,"¿Qué son los flags?","Señales que indican particularidades del resultado de la ALU",[["Direcciones","No."],["Buses","No."],["Instrucciones","No."]],"Ej.: resultado cero o negativo.");
+c(C,"Una señal que indica que el resultado de la ALU fue cero es un...","Flag",[["Acumulador","Guarda el resultado, no lo señala."],["Puerto","Conecta con el exterior."],["Canal","Gestiona la E/S."]],"Mismo concepto, con ejemplo.");
+c(C,"¿Para qué sirve el puntero del stack?","Direcciona la zona de memoria con las direcciones de retorno de las subrutinas",[["Apunta a la siguiente instrucción","Es el contador de programa."],["Guarda datos del usuario","No."],["Controla el reloj","No."]],"Subrutina: programa al que llamas y vuelve (ejemplo del bocata).");
+c(C,"¿Qué es la unidad de control dentro del microprocesador?","La lógica que gobierna el procesador y genera las señales para ejecutar la instrucción",[["El registro de resultados","Es el acumulador."],["La parte que suma","Es la ALU."],["Una memoria","No."]],"Ejecuta la instrucción decodificada.");
+c(C,"¿Qué une los elementos del microprocesador?","Los buses internos (datos, instrucciones y control)",[["Los periféricos","Están fuera."],["Los canales","Son para la E/S."],["Los puertos","Conectan con el exterior."]],"Tus apuntes lo llaman bus de contorno (control).");
+c(B,"En el bus de datos, ¿qué recorrido sigue la información?","Entrada → memoria → ALU → memoria → salida",[["Entrada → unidad de control → salida","No es el de datos."],["Entrada → ALU → salida","Siempre pasan por memoria."],["Salida → memoria → entrada","Al revés."]],"Los datos procesados vuelven a memoria antes de salir.");
+c(B,"¿Qué bus pasa por la ALU?","El bus de datos",[["El bus de instrucciones","Va a la unidad de control."],["El bus de control","Sincroniza, no lleva datos a procesar."],["Ninguno","El de datos sí."]],"Los datos se procesan en la ALU.");
+c(B,"¿Qué bus llega a la unidad de control?","El bus de instrucciones",[["El bus de datos","Va a la ALU."],["Ninguno","El de instrucciones sí."],["El de periféricos","No existe."]],"Entrada → memoria → unidad de control.");
+c(B,"¿Para qué sirve el bus de control?","Para sincronizar todas las unidades",[["Para llevar datos","Es el de datos."],["Para llevar instrucciones","Es el de instrucciones."],["Para conectar el disco","No."]],"3 buses: datos, instrucciones y control.");
+c(B,"¿De qué depende la velocidad de proceso?","Del número de instrucciones del programa y de la cantidad de datos",[["Solo del tamaño del disco","No."],["Del número de periféricos","No."],["Del color de la carcasa","No."]],"Se mide con el ciclo de reloj y la velocidad de transformación de la información.");
+c(B,"¿A qué se refiere la duración del ciclo de la CPU?","Al tiempo que se tarda en acceder a un carácter de la memoria",[["Al tiempo de búsqueda del disco","Es del disco."],["Al tiempo de apagado","No."],["A la velocidad del bus","No."]],"Es decir, el tiempo en conseguir un carácter.");
+c(B,"¿Qué es un canal?","Un pequeño ordenador que ejecuta programas de canal y libera al procesador de la E/S",[["Un cable","No."],["Una memoria","No."],["Un registro de la ALU","No."]],"Se le pueden conectar varias unidades de E/S.");
+c(B,"¿Cómo se llaman los programas que ejecuta un canal?","Programas de canal",[["Subrutinas","Son otra cosa."],["Microprogramas de ALU","No."],["Drivers de BIOS","No aparece."]],"Gracias a ellos el procesador se desentiende de la E/S.");
+c(B,"Un canal que transmite toda la información de una unidad mientras las demás esperan es...","Canal a ráfagas (selector)",[["Canal múltiple","Ese entrelaza."],["Canal analógico","No existe."],["Canal híbrido","No existe."]],"Patrón: AAA BBB CCC.");
+c(B,"¿Qué otro nombre tienen los canales a ráfagas?","Canales selectores",[["Multiplexores","Son los múltiples."],["Demultiplexores","Están en la ALU."],["Canales de control","No."]],"Ráfagas = selector.");
+c(B,"Un canal que transmite un byte de cada unidad, entrelazados, es...","Canal múltiple (multiplexor)",[["Canal a ráfagas","Ese espera a cada unidad."],["Canal de control","No existe."],["Canal selector","Es el de ráfagas."]],"Patrón: CBA CBA CBA.");
+c(B,"¿Qué patrón corresponde al canal múltiple?","CBA CBA CBA",[["AAA BBB CCC","Es ráfagas."],["ABC solo una vez","No."],["Solo A","No."]],"El entrelazado da sensación de rapidez.");
+c(M,"¿Cómo está organizada la memoria principal?","Como apartados de correos: posiciones con una dirección cada una",[["Como una pila de platos","Eso es el stack."],["Como un árbol","Eso son los directorios."],["Sin organización","No."]],"Cada departamento es una posición y su número es la dirección.");
+c(M,"¿Cómo se llama cada departamento de la memoria?","Posición",[["Dirección","La dirección es el número de la posición."],["Palabra","Es la cantidad máxima por operación."],["Bloque","Es de los discos."]],"Posición = el hueco. Dirección = su número.");
+c(M,"¿Cómo se llama el número asociado a cada posición?","Dirección",[["Posición","Es el hueco."],["Palabra","No."],["Sector","Es del disco."]],"La dirección es siempre la misma.");
+c(M,"¿Cambia la dirección de una posición según su contenido?","No, la dirección es siempre la misma",[["Sí, cambia con cada dato","No tiene nada que ver con el contenido."],["Solo al escribir","No."],["Solo al leer","No."]],"Las posiciones se numeran desde 0.");
+c(M,"¿En qué número empiezan las posiciones?","En el 0",[["En el 1","No."],["En el 8","No."],["Depende del contenido","No."]],"Se numeran correlativamente.");
+c(M,"¿Cuántos datos puede contener una posición a la vez?","Uno",[["Dos","No."],["Ocho","No."],["Ilimitados","No."]],"Por eso escribir sustituye lo anterior.");
+c(M,"¿Cómo es la operación de escribir en memoria?","Autodestructiva: sustituye lo anterior, que no se recupera",[["No destructiva","Eso es leer."],["Guarda ambas versiones","No."],["Añade al final","No."]],"Leer, en cambio, copia sin alterar.");
+c(M,"Al leer de la memoria principal...","Se copia la información y el original queda igual",[["Se borra","Eso pasa al escribir."],["Se mueve","Se copia."],["Se invierte","No."]],"Se puede leer tantas veces como se quiera.");
+c(M,"Si escribes un dato nuevo en una posición ocupada, el dato antiguo...","Se pierde y es irrecuperable",[["Se guarda en otra posición","No."],["Se suma al nuevo","No."],["Pasa al disco","No."]],"La escritura es autodestructiva.");
+c(M,"¿Qué es la palabra?","La cantidad máxima de información que se trata en una operación",[["8 bits","Es el octeto."],["La unidad mínima","Es el bit."],["Una dirección","No."]],"Según cómo sea la palabra, hay tres tipos de memoria.");
+c(M,"En una memoria de palabra fija...","Una palabra es igual a una dirección (ordenador de palabra direccional)",[["Cada posición guarda un carácter","Es la variable."],["La palabra son 4 octetos","Es la de octeto."],["La palabra varía","Es fija."]],"La longitud la da el número de bits.");
+c(M,"Un ordenador de palabra direccional usa memoria de...","Palabra fija",[["Palabra variable","Esos son de caracteres direccionales."],["Octeto","No es ese nombre."],["Núcleos","No es un tipo de palabra."]],"Mismo concepto, al revés.");
+c(M,"En la memoria de palabra variable, ¿qué guarda cada posición?","Los bits necesarios para un carácter",[["8 bits y palabra de 4","Es la de octeto."],["Una palabra entera","Es la fija."],["Un bit","No."]],"La palabra ocupa un número variable de posiciones.");
+c(M,"Los ordenadores con memoria de palabra variable se llaman...","De caracteres direccionales",[["De palabra direccional","Es la fija."],["De octeto","No."],["Híbridos","No."]],"Cada posición = un carácter.");
+c(M,"¿Cuál NO es una forma de acceder en la memoria de palabra variable?","Dar solo el número de bits de la palabra",[["Posición inicial + marca tras la última","Es correcta."],["Dirección de la última + número de posiciones","Es correcta."],["Ninguna de estas es falsa","Sí hay una falsa."]],"Hay 2 formas: inicial + marca, o última + número de posiciones.");
+c(M,"¿Cuántos octetos forman una palabra en la memoria direccionable a octeto?","4",[["2","Es la media palabra."],["8","Es la doble palabra."],["1","Es una posición."]],"Se accede por el octeto más a la izquierda.");
+c(M,"En la memoria de octeto, la media y la doble palabra son...","2 y 8 octetos",[["1 y 4","No."],["4 y 16","No."],["2 y 4","4 es la palabra normal."]],"Media 2, palabra 4, doble 8.");
+c(M,"¿Qué es un bit?","La unidad mínima de información (0 o 1)",[["8 bits","Es el octeto o byte."],["La máxima información","Es la palabra."],["Una posición","No."]],"1 byte = 8 bits.");
+c(M,"Un octeto equivale a...","8 bits, es decir, 1 byte",[["4 bits","No."],["16 bits","No."],["1 palabra","No."]],"Octeto = byte.");
+c(M,"Un anillo atravesado por un hilo con corriente...","Adquiere un campo magnético alrededor",[["Se calienta y se funde","No."],["Se vuelve transparente","No."],["No cambia","Sí cambia."]],"Según el sentido, queda magnetizado de una forma u otra.");
+c(M,"Si el flujo va de derecha a izquierda, el núcleo se magnetiza...","En el sentido de las agujas del reloj",[["En sentido contrario a las agujas","Eso es de izquierda a derecha."],["No se magnetiza","Sí."],["Alternando","No."]],"Dos sentidos = dos estados = 0 y 1.");
+c(M,"En la memoria de núcleos, ¿qué representa cada núcleo?","Un bit",[["Un byte","No."],["Una palabra","No."],["Una dirección","No."]],"Es biestable: dos estados magnéticos.");
+c(M,"¿Cómo se escribe en un núcleo?","Con dos hilos en ángulo recto, cada uno con la mitad de la corriente",[["Con un hilo y toda la corriente","Se magnetizarían todos."],["Con el hilo sensor","Es para leer."],["Con el inhibidor","Restaura."]],"Solo se magnetiza el núcleo de la intersección.");
+c(M,"¿Cómo se llama el tercer hilo, el que lee?","Sensor o conductor de detección",[["Inhibidor","Es el cuarto, que restaura."],["Hilo de reloj","No."],["Hilo de control","No."]],"El cambio de estado induce corriente en el sensor.");
+c(M,"¿Para qué sirve el hilo inhibidor?","Para restaurar los 1 destruidos al leer",[["Para leer","Eso es el sensor."],["Para escribir un 0","No."],["Para sincronizar","No."]],"Leer destruye la información.");
+c(M,"¿Cuántos hilos atraviesan un núcleo en total?","4: dos para escribir, el sensor y el inhibidor",[["2","Faltan el sensor y el inhibidor."],["3","Falta el inhibidor."],["1","No."]],"Escritura (×2), lectura (sensor), restaurar (inhibidor).");
+c(M,"¿Por qué la lectura en núcleos es destructiva?","Porque para leer se intenta escribir un 0 y el núcleo cambia de estado",[["Porque se rompe el anillo","No."],["Porque se apaga la corriente","No."],["No es destructiva","Sí lo es, por eso existe el inhibidor."]],"El cambio induce corriente en el sensor (se lee un 1) pero borra el dato.");
+c(N,"¿Cuál es el número 9 en binario?","1001",[["1010","Es 10."],["1100","Es 12."],["0110","Es 6."]],"9÷2=4 r1; 4÷2=2 r0; 2÷2=1 r0 → 1001.");
+c(N,"¿Cómo se pasa de decimal a binario?","Dividiendo entre 2: último cociente + restos leídos de abajo arriba",[["Multiplicando por 2","No."],["Sumando potencias de 10","No."],["Dividiendo entre 10","No."]],"Ej.: 13 → 1101.");
+c(N,"¿Cómo se pasa de binario a decimal?","Multiplicando cada bit por 2 elevado a su posición (desde 0 a la derecha) y sumando",[["Dividiendo entre 2","Es al revés."],["Contando los unos","No."],["Multiplicando por 10","No."]],"Ej.: 101 = 4+0+1 = 5.");
+c(N,"¿Cuánto es 1011010 en decimal?","90",[["9","Error de tu PDF: 9 es 1001."],["45","Es 101101."],["180","Es 10110100."]],"64+16+8+2 = 90.");
+c(N,"¿Cuál es el 13 en binario?","1101",[["1011","Es 11."],["1110","Es 14."],["1001","Es 9."]],"8+4+1 = 13.");
+c(N,"¿Cuánto es 101 en decimal?","5",[["3","Es 11."],["6","Es 110."],["101","Eso es leerlo como decimal."]],"4+0+1.");
+c(N,"¿Cuál es el 5 en binario?","101",[["110","Es 6."],["100","Es 4."],["111","Es 7."]],"5÷2=2 r1; 2÷2=1 r0 → 101.");
+c(N,"¿Cuál es el 10 en binario?","1010",[["1001","Es 9."],["1100","Es 12."],["0101","Es 5."]],"8+2 = 10.");
+c(N,"¿Cuál es el 8 en binario?","1000",[["0111","Es 7."],["1001","Es 9."],["10000","Es 16."]],"8 = 2³: un 1 y tres ceros.");
+c(N,"¿Cuánto es 1111 en decimal?","15",[["4","Eso es contar los unos."],["16","Es 10000."],["1111","Es leerlo como decimal."]],"8+4+2+1.");
+c(N,"¿Cuánto es 110 en decimal?","6",[["3","Es 11."],["5","Es 101."],["110","No."]],"4+2+0.");
+c(N,"¿Cuánto es 100000 en decimal?","32",[["6","Eso es contar cifras."],["16","Es 10000."],["64","Es 1000000."]],"Un 1 en la posición 5: 2⁵ = 32.");
+c(N,"¿Cuánto vale el bit de más a la derecha de un número binario?","1 (2⁰)",[["0","2⁰ es 1."],["2","Es el segundo bit."],["10","No."]],"Posiciones desde 0: 1, 2, 4, 8, 16, 32, 64...");
+c(N,"¿Cuánto es 1 KB y 1 MB?","1 KB = 1024 bytes; 1 MB = 1024 KB",[["1 MB = 1024 bits","Error de tu PDF."],["1 KB = 1000 bits","No."],["1 KB = 8 bytes","No."]],"1 byte = 8 bits.");
+c(L,"¿Dónde se procesa realmente la información?","En la ALU",[["En la unidad de control","Esa dirige y coordina."],["En la memoria principal","Esa almacena."],["En los periféricos","No."]],"Cálculo, lógica y operaciones intermedias (mover, desplazar, almacenar).");
+c(L,"¿Qué unidades forman la ALU?","Sumadores, registros, comparadores/complementadores y multiplexores/demultiplexores",[["Codificadores, contadores y reloj","Es la unidad de control."],["Teclado y monitor","Periféricos."],["Flags y buses","No."]],"Sumadores: cálculo. Comparadores: lógica. Registros: ambos.");
+c(L,"En la ALU, ¿qué elementos se orientan a las operaciones lógicas?","Los comparadores",[["Los sumadores","Van al cálculo."],["Los registros","Se usan indistintamente."],["El reloj","No es de la ALU."]],"Mismo tema, otro enfoque.");
+c(L,"¿En qué se basa toda la circuitería de la ALU?","En puertas lógicas, tablas de verdad y álgebra de Boole",[["En relés","No."],["En canales","No."],["En i-nodos","Son de UNIX."]],"Boole: tres operaciones (suma, producto, negación).");
+c(L,"La puerta AND da 1...","Solo si todas las entradas son 1",[["Si alguna es 1","Eso es OR."],["Si son distintas","Eso es XOR."],["Siempre","No."]],"Circuito en serie, producto lógico.");
+c(L,"¿Cuánto da AND con entradas 1 y 0?","0",[["1","Necesita las dos a 1."],["Depende","No."],["2","No existe en binario."]],"1·0 = 0.");
+c(L,"La puerta OR da 0...","Solo si todas las entradas son 0",[["Si alguna es 1","Ahí da 1."],["Si son distintas","No."],["Nunca","Con 0 y 0 da 0."]],"Circuito en paralelo, suma lógica.");
+c(L,"¿Cuándo se activa una puerta XOR?","Solo cuando las entradas son diferentes",[["Cuando ambas son 1","Es AND."],["Cuando alguna es 1","Es OR."],["Cuando son iguales","Es XNOR."]],"1 y 1 → 0; 0 y 1 → 1.");
+c(L,"¿Cuánto da XOR con entradas 1 y 1?","0",[["1","Las entradas son iguales."],["2","No."],["Depende","No."]],"XOR solo da 1 si son distintas.");
+c(L,"¿Qué hace la puerta NOT?","Invierte la entrada",[["Suma entradas","No."],["Multiplica entradas","No."],["Compara dos entradas","No."]],"0 → 1 y 1 → 0.");
+c(L,"La puerta AND equivale a un circuito...","En serie (producto lógico)",[["En paralelo","Es OR."],["Que invierte","Es NOT."],["Que da 1 si son distintas","Es XOR."]],"Solo pasa corriente si todo está cerrado.");
+c(L,"La puerta OR equivale a un circuito...","En paralelo (suma lógica)",[["En serie","Es AND."],["Que invierte","Es NOT."],["Que da 1 si son iguales","Es XNOR."]],"Basta una rama cerrada.");
+c(L,"¿Qué da una puerta NAND con entradas 1 y 1?","0",[["1","Eso daría AND."],["Depende del reloj","No."],["No se sabe","NAND es AND negada."]],"NAND solo da 0 cuando todas son 1.");
+c(L,"¿Qué da una puerta NOR con entradas 0 y 0?","1",[["0","Eso daría OR."],["Depende","No."],["2","No."]],"NOR es OR negada: solo da 1 con todo a 0.");
+c(L,"Ley de idempotencia:","A + A = A y A · A = A",[["−(−A) = A","Es la involución."],["A + A·B = A","Es la absorción."],["A + B = B + A","Es la conmutativa."]],"Repetir la variable no cambia nada.");
+c(L,"¿A qué se simplifica A · A?","A",[["A²","En Boole no existe A²."],["0","No."],["1","No."]],"Idempotencia.");
+c(L,"Ley de la involución:","−(−A) = A",[["A + A = A","Idempotencia."],["−(A+B) = −A · −B","De Morgan."],["A·(B+C) = A·B + A·C","Distributiva."]],"Negar dos veces.");
+c(L,"Ley conmutativa:","A + B = B + A y A · B = B · A",[["(A+B)+C = A+(B+C)","Es la asociativa."],["A + A = A","Idempotencia."],["−(−A) = A","Involución."]],"El orden no importa.");
+c(L,"Ley asociativa:","(A+B)+C = A+(B+C)",[["A+B = B+A","Conmutativa."],["A+A·B = A","Absorción."],["A·(B+C) = A·B+A·C","Distributiva."]],"La agrupación no importa.");
+c(L,"Ley distributiva:","A·(B+C) = A·B + A·C",[["A+A = A","Idempotencia."],["A+B = B+A","Conmutativa."],["A+A·B = A","Absorción."]],"También A + B·C = (A+B)·(A+C).");
+c(L,"−(A + B) es igual a...","−A · −B (De Morgan; tus apuntes ponen Moore)",[["−A + −B","Eso es −(A·B)."],["A · B","No."],["−(A·B)","No."]],"El nombre correcto es De Morgan.");
+c(L,"−(A · B) es igual a...","−A + −B",[["−A · −B","Eso es −(A+B)."],["A + B","No."],["−(A+B)","No."]],"La otra ley de De Morgan.");
+c(L,"Ley de la absorción:","A + A·B = A y A·(A+B) = A",[["A + A = A","Idempotencia."],["A+B·C = (A+B)·(A+C)","Distributiva."],["(A+B)+C = A+(B+C)","Asociativa."]],"A·B queda absorbido por A.");
+c(L,"¿A qué se simplifica A + A·B?","A",[["A·B","No."],["B","No."],["A + B","No."]],"Absorción.");
+c(L,"En una tabla de Karnaugh de 3 bits, ¿cuál es la variable de mayor peso?","A (C la de menor)",[["C","Es la de menor."],["B","Es la intermedia."],["Todas igual","No."]],"Se escribe Karnaugh (tus apuntes: Karnau).");
+c(L,"¿Para qué se usan los biestables?","Para circuitos como contadores y registros: memorizan información",[["Para mostrar imágenes","No."],["Para conectar periféricos","No."],["Para el sistema de archivos","No."]],"Pueden permanecer en un estado indefinidamente sin perturbaciones.");
+c(L,"¿Qué es un biestable (flip-flop)?","Un circuito que puede permanecer en uno de dos estados indefinidamente",[["Una puerta que invierte","Es NOT."],["Un tipo de disco","No."],["Un bus","No."]],"Por eso memoriza un bit.");
+c(L,"¿Qué diferencia a un biestable síncrono de uno asíncrono?","El síncrono tiene además entrada de reloj (CLK)",[["El asíncrono tiene reloj","Al revés."],["El síncrono no tiene control","Tiene control y reloj."],["Ninguna","Sí la hay."]],"Asíncrono: solo entradas de control (ej. RS).");
+c(L,"Según los apuntes del profe, ¿qué biestable es el ejemplo de asíncrono?","RS",[["JK","Se activa por flanco."],["T","Se activa por flanco."],["D","Se activa por nivel con reloj."]],"Asíncrono = solo entradas de control.");
+c(L,"¿Qué entradas prevalecen?","Las asíncronas sobre las síncronas",[["Las síncronas sobre las asíncronas","Al revés."],["Las de reloj siempre","No."],["Ninguna","Sí prevalecen las asíncronas."]],"Dato literal de tus apuntes.");
+c(L,"¿Qué biestables se activan por nivel?","RS y D",[["JK y T","Esos son por flanco."],["Solo T","T es por flanco."],["JK y D","JK es por flanco."]],"Criterio del profe. Truco: JoTa por flanco, el resto por nivel.");
+c(L,"¿Qué biestables se activan por flanco?","JK y T",[["RS y D","Esos son por nivel."],["Solo RS","RS es por nivel."],["JK y D","D es por nivel según el profe."]],"Truco: JoTa por flanco.");
+c(L,"El biestable T se activa...","Por flanco",[["Por nivel","Según el profe, por nivel son RS y D."],["No tiene activación","Sí la tiene."],["Solo es asíncrono","No."]],"JK y T por flanco.");
+c(L,"El biestable D se activa...","Por nivel",[["Por flanco","Según el profe, por flanco son JK y T."],["No se activa","No."],["Solo sin reloj","No."]],"RS y D por nivel.");
+c(L,"¿Por qué se inventaron los biestables activados por flanco?","Por los problemas de los activados por nivel",[["Porque eran más baratos","No es lo que dicen tus apuntes."],["Para eliminar el reloj","Usan reloj."],["Para sustituir los transistores","No."]],"Activación por nivel: alto o bajo. Por flanco: subida o bajada.");
+c(L,"¿Qué es un flanco de subida?","El paso de 0 a 1",[["El paso de 1 a 0","Es bajada."],["Estar en 1","Es nivel alto."],["Estar en 0","Es nivel bajo."]],"Bajada: de 1 a 0.");
+c(L,"¿Con qué puertas se puede construir un RS?","Con NAND o con NOR",[["Solo con AND","No."],["Solo con XOR","No."],["Con relés","No."]],"Dato de tu libreta.");
+c(U,"¿Cuál es la función principal de la unidad de control?","Recoger, interpretar y ejecutar",[["Sumar y restar","Es la ALU."],["Guardar datos permanentes","Almacenamiento externo."],["Conectar periféricos","No."]],"Dirige y coordina todo el proceso de datos.");
+c(U,"¿Qué unidad dirige y coordina todo el proceso de datos?","La unidad de control",[["La ALU","Procesa, no coordina."],["La memoria principal","Almacena."],["El canal","Gestiona la E/S."]],"Mismo concepto, al revés.");
+c(U,"¿Cuál NO es un elemento de la unidad de control?","Los sumadores",[["Registros","Sí lo es."],["Codificadores y decodificadores","Sí."],["Reloj (CLK)","Sí."]],"Los sumadores son de la ALU.");
+c(U,"¿Qué hace el codificador?","Convierte datos decimales a binario",[["Binario a decimal","Es el decodificador."],["Suma","Es la ALU."],["Genera el reloj","No."]],"Codificador: decimal → binario.");
+c(U,"¿Qué hace el decodificador?","Convierte el binario interno a decimal externo",[["Decimal a binario","Es el codificador."],["Restaura núcleos","Es el inhibidor."],["Lee el disco","No."]],"Decodificador: binario → decimal.");
+c(U,"Los registros de la unidad de control están hechos con...","Biestables",[["Núcleos magnéticos","Eran de la memoria."],["Discos","No."],["Relés","Eran del Mark I."]],"Igual que los de la ALU.");
+c(U,"¿Qué guarda el registro de dirección de la unidad de control?","La dirección de memoria de los operandos",[["El operador de la instrucción","Es el de instrucción."],["Las instrucciones extraídas de memoria","Es el de almacenamiento."],["El resultado de la ALU","Es el acumulador."]],"Tres registros: almacenamiento, instrucción y dirección.");
+c(U,"¿Dónde se guarda la instrucción extraída de la memoria?","En el registro de almacenamiento",[["En el registro de dirección","Guarda direcciones de operandos."],["En el acumulador","No."],["En el disco","No."]],"Luego el registro de instrucción guarda el operador.");
+c(U,"¿Qué guardan los contadores (indicadores de instrucción)?","La dirección de memoria de la instrucción que se va a ejecutar",[["El resultado","No."],["El número de periféricos","No."],["La hora","No."]],"Equivale al contador de programa.");
+c(D,"¿Qué propiedad física usan los discos magnéticos?","Las partículas de algunos materiales se orientan al aplicarles un campo magnético",[["La luz reflejada","Eso es óptico."],["La temperatura","No."],["La presión","No."]],"Según el sentido: un 1 o un 0. Un cabezal detecta la orientación para leer.");
+c(D,"¿Cómo se clasifican los soportes por la forma de almacenar los datos?","Magnéticos, ópticos y magneto-ópticos",[["Fijos y extraíbles","Es por ubicación."],["Secuenciales y directos","Es por acceso."],["Sólidos y mecánicos","Es por diseño (PDF)."]],"Otras clasificaciones: ubicación, acceso y diseño.");
+c(D,"Un soporte en el que hay que leer todo lo anterior para llegar a un dato es de acceso...","Secuencial",[["Directo","Ese va directo a la ubicación."],["Aleatorio","Es lo mismo que directo."],["Óptico","Es la forma de almacenar."]],"Ej.: cintas DAT.");
+c(D,"¿Qué soportes son los únicos de acceso secuencial según tus apuntes?","Las cintas DAT",[["Los discos duros","Son de acceso aleatorio."],["Los CD y DVD","Aleatorio."],["Los disquetes","Aleatorio."]],"Todos los demás son de acceso aleatorio.");
+c(D,"¿Cómo se llama el tiempo de buscar y posicionarse sobre un dato?","Tiempo de acceso",[["Tiempo de transferencia","Es otro concepto."],["Ciclo de CPU","Es de la memoria."],["Latencia","Es solo una parte."]],"Se mide en milisegundos.");
+c(D,"El tiempo de acceso de un disco es...","Tiempo de búsqueda + tiempo de latencia",[["Búsqueda − latencia","Se suman."],["Giro × densidad","Eso es transferencia."],["Solo latencia","Falta la búsqueda."]],"Los fabricantes dan tiempos promedio.");
+c(D,"¿Qué es el tiempo de latencia?","Lo que tarda la información en quedar bajo la cabeza",[["Lo que tarda la cabeza en llegar a la pista","Es la búsqueda."],["El tiempo de transferir un sector","No."],["El tiempo de arranque","No."]],"Búsqueda (llegar a la pista) + latencia (esperar al dato).");
+c(D,"¿En qué se mide el tiempo de acceso?","En milisegundos (ms)",[["En bits por segundo","Es la transferencia."],["En gigabytes","Es la capacidad."],["En km/h","No."]],"Cuanto menor, mejor tiempo de respuesta.");
+c(D,"¿Por qué buses se comunica el disco duro con el ordenador?","EIDE, IDE, SCSI o SATA",[["USB, HDMI y VGA","No son los de tus apuntes."],["FAT y GPT","Son tablas."],["RS y JK","Son biestables."]],"El disco duro es el soporte fijo más usado.");
+c(D,"¿Qué es una pista?","Una corona circular que gira delante de la cabeza",[["El trozo de pizza","Es el sector."],["Varias superficies","No."],["La cabeza","No."]],"Las pistas se dividen en sectores.");
+c(D,"¿Qué es un sector?","La unidad de información que se transfiere en un acceso",[["Toda la pista","Se divide en sectores."],["Varias superficies","No."],["La velocidad","No."]],"Forma de sector circular.");
+c(D,"¿Qué es un cilindro?","Las pistas en las que se posiciona el brazo (en varias superficies)",[["Un sector","No."],["Una superficie","No."],["La cabeza","No."]],"Existen cuando hay más de una superficie.");
+c(D,"¿Cómo se calcula la capacidad de un disco?","Superficies × cilindros × sectores/pista × bytes/sector",[["Se suman","Se multiplican."],["Cilindros × giro","No."],["Superficies × sectores","Faltan factores."]],"El ejemplo de tus apuntes da unos 20 000 millones de bytes; el profe pone 18 GB.");
+c(D,"Un disco tiene 2 superficies, 100 cilindros, 10 sectores por pista y 512 bytes por sector. ¿Capacidad?","1.024.000 bytes",[["624 bytes","Eso es sumar."],["102.400 bytes","Falta una superficie."],["10.240 bytes","Faltan factores."]],"2 × 100 × 10 × 512 = 1.024.000.");
+c(D,"Si cada superficie tiene varias cabezas lectoras, el sistema es de...","Cabeza fija",[["Cabeza móvil","Eso es una cabeza."],["Acceso secuencial","No."],["Cilindro","No."]],"Una cabeza por superficie = cabeza móvil.");
+c(D,"Con una sola cabeza lectora por superficie, el sistema es de...","Cabeza móvil",[["Cabeza fija","Varias cabezas."],["Doble cabeza","No."],["Sin cabeza","No."]],"Mismo concepto, al revés.");
+c(D,"¿Por qué el disco duro está siempre girando?","Por la inercia: tarda en alcanzar la velocidad nominal",[["Para enfriarse","No."],["Para no perder datos","No."],["Porque no tiene freno","No."]],"La velocidad nominal es a la que puede leer y escribir.");
+c(D,"Según el profe, ¿a qué distancia pasa la cabeza sobre el disco?","A 10⁻⁴ mm de la superficie",[["A 1 mm","Mucho más."],["Tocándola","Eso es en los extraíbles."],["A 1 cm","Mucho más."]],"Así no raya el disco.");
+c(D,"¿Cómo consigue la cabeza no tocar el disco?","El disco gira a más de 100 km/h y crea una corriente de aire sobre la que planea",[["Con un imán que la repele","No."],["Con un muelle","No."],["El disco está parado","Siempre gira."]],"Se adapta incluso a las irregularidades del soporte.");
+c(D,"En los discos extraíbles, la cabeza...","Se apoya en la superficie, por eso duran menos y tienen mayor tiempo de acceso",[["Planea igual que en el duro","No."],["No existe","Sí existe."],["Gira a 100 km/h","No."]],"Suelen estar parados y solo arrancan al leer o escribir.");
+c(D,"¿En qué se mide la velocidad de transferencia?","En bits por segundo",[["En milisegundos","Es el tiempo de acceso."],["En bytes totales","Es capacidad."],["En km/h","No."]],"Velocidad a la que se transfieren los bits de un sector.");
+c(D,"¿Qué aumenta la velocidad de transferencia?","Más velocidad de giro y más densidad de grabación",[["Más archivos","No."],["Disco más grande","No."],["Más periféricos","No."]],"Pero limita la interfaz (IDE, SCSI...).");
+c(D,"¿Por qué un disco rápido puede no transferir rápido?","Porque la interfaz no absorbe ese flujo de datos",[["Por el sistema de archivos","No."],["Por el color","No."],["Por la BIOS","No."]],"La interfaz es el cuello de botella.");
+c(D,"¿Dónde está el MBR?","En el sector 0",[["En el último sector","No."],["En la BIOS","No."],["En el área de datos","No."]],"Carga el SO si el disco es de arranque.");
+c(D,"¿Qué es lo primero que hace el ordenador al encenderse?","Un test del hardware con un programa de la BIOS",[["Leer la FAT","No."],["Cargar el i-nodo","Es UNIX al abrir archivos."],["Ejecutar el SO","Va después."]],"Test → rutina de arranque → lee el MBR → salta al SO.");
+c(D,"Aparte del MBR, ¿en qué dos áreas se dividen los sectores del disco?","Área de datos y área de localización",[["Área de BIOS y área de RAM","No."],["Pistas y cilindros","Es geometría."],["FAT y NTFS","No."]],"En Microsoft, la tabla de localización es la FAT.");
+c(D,"¿Cuál de estos es un dispositivo extraíble según tus apuntes?","Disco ZIP",[["Memoria principal","Es interna."],["ALU","No."],["Unidad de control","No."]],"Lista: CD, DVD, memorias, disquetes, ZIP y cintas DAT.");
+c(A,"¿Qué determina el sistema de archivos?","La estructura, el nombre, el acceso, el uso y la protección de los archivos",[["La velocidad de giro","No."],["El tamaño de la RAM","No."],["El tipo de periféricos","No."]],"Cada SO implementa el suyo.");
+c(A,"¿Qué longitud suelen tener los nombres de archivo según tus apuntes?","Hasta 8 caracteres",[["Hasta 3","Es la extensión."],["Hasta 255 siempre","No es lo de tus apuntes."],["1 carácter","No."]],"Con una extensión tras el punto.");
+c(A,"¿Qué indica la extensión de un archivo?","Por lo general, el tipo de archivo",[["Su tamaño","No."],["Su fecha","No."],["Su dueño","No."]],"Es la parte tras el punto.");
+c(A,"¿Qué indica el atributo H?","Que el archivo no se muestra al listar (oculto)",[["Que es del sistema","Es S."],["Que es de solo lectura","Es R."],["Que se ha modificado","Es A."]],"S, H, R, A/M, fecha, hora y tamaño.");
+c(A,"¿Qué indica el atributo R?","Si el archivo es de solo lectura o se puede modificar",[["Si está oculto","Es H."],["Si es del sistema","Es S."],["Si se modificó","Es A."]],"R de read.");
+c(A,"¿Qué indica el atributo S?","Si el archivo es del sistema operativo",[["Si es de solo lectura","Es R."],["Si está oculto","Es H."],["Su tamaño","No."]],"S de sistema.");
+c(A,"¿Cuándo se activa el atributo A (o M)?","Cuando el archivo ha sido modificado",[["Cuando se oculta","Es H."],["Cuando se crea","Eso lo dice la fecha."],["Cuando se lee","No."]],"Útil para las copias de seguridad.");
+c(A,"¿Qué dos tipos de objetos hay en un sistema de archivos?","Archivos y directorios",[["Sectores y pistas","Es el disco."],["Bits y bytes","No."],["FAT y MBR","No."]],"Archivos contienen datos; directorios los organizan.");
+c(A,"¿Qué contiene realmente un directorio?","La información necesaria sobre sus archivos y directorios",[["Los archivos completos","No; solo su información."],["Solo la FAT","No."],["El MBR","No."]],"Dato literal de tus apuntes.");
+c(A,"¿Cómo se llama el directorio que contiene a todos los demás?","Raíz",[["Padre","Es el de nivel superior a uno concreto."],["Activo","Es donde estás."],["Hijo","No."]],"Desde él parten las rutas absolutas.");
+c(A,"¿Qué diferencia hay entre ruta absoluta y relativa?","La absoluta parte de la raíz; la relativa, del directorio actual",[["Al revés","No."],["Solo cambia el separador","No."],["La relativa parte del padre","Parte del actual."]],"Ej.: absoluta \\D3\\D5\\P.TXT · relativa ..\\D5\\P.TXT");
+c(A,"Una ruta que empieza en el directorio donde estás trabajando es...","Relativa",[["Absoluta","Esa parte de la raíz."],["Raíz","No es un tipo de ruta."],["Oculta","No."]],"Mismo concepto, al revés.");
+c(A,"En los directorios, ¿qué son . y ..?","El directorio activo y su padre",[["La raíz y el actual","No."],["El padre y el hijo","No."],["Archivos ocultos","No."]],"Facilitan la navegación.");
+c(A,"¿Qué separador usa MS-DOS/Windows y cuál UNIX?","Windows \\ ; UNIX /",[["Windows / ; UNIX \\","Al revés."],["Los dos /","No."],["Los dos \\","No."]],"Ej.: C:\\");
+c(A,"¿Qué es un bloque?","Un número de sectores asociados a un único archivo",[["Un directorio","No."],["Un atributo","No."],["Una pista entera","No."]],"Un archivo ocupa uno o varios bloques.");
+c(A,"Si el bloque es muy grande y el archivo muy pequeño...","Se desperdicia espacio en disco",[["Se necesitan muchos accesos","Eso es con bloques pequeños."],["Se fragmenta","No."],["Mejora siempre","No."]],"Bloques pequeños = muchos accesos.");
+c(A,"Si el bloque es muy pequeño...","Hacen falta muchos bloques y muchos accesos al disco",[["Se desperdicia espacio","Eso es con bloques grandes."],["El archivo se borra","No."],["No cambia nada","Sí cambia."]],"Equilibrio: alrededor de 1 KB.");
+c(A,"¿Qué tamaños de bloque son adecuados según tus apuntes?","512 bytes, 1 KB o 2 KB",[["1 MB","Demasiado grande."],["8 bits","Es un byte."],["1 GB","Demasiado grande."]],"El tamaño medio ronda 1 KB.");
+c(A,"Problema de la asignación adyacente:","Hay que conocer el número de bloques y produce fragmentación",[["Cada bloque guarda la siguiente dirección","Lista ligada."],["Necesita tabla en memoria","FAT."],["Es difícil de implementar","Es fácil."]],"Su ventaja: fácil implementación.");
+c(A,"¿Qué técnica exige conocer de antemano cuántos bloques ocupará el archivo?","Asignación adyacente",[["Lista ligada","No lo necesita."],["FAT","No lo necesita."],["i-nodos","No lo necesita."]],"Mismo concepto, al revés.");
+c(A,"En la lista ligada, ¿qué guarda cada bloque además de datos?","La dirección del siguiente bloque",[["El nombre del archivo","Lo guarda el directorio."],["La FAT","No."],["El MBR","No."]],"El directorio guarda la dirección del primero.");
+c(A,"En la lista ligada, ¿qué valor tiene el último bloque?","NULL",[["0","No."],["−1","No."],["La dirección del primero","No es circular."]],"Indica fin de archivo.");
+c(A,"Inconvenientes de la lista ligada:","Cada bloque pierde capacidad y hay que leer los anteriores para llegar a uno",[["Fragmenta mucho","Aprovecha todos los bloques."],["Exige saber el tamaño","Eso es la adyacente."],["Solo vale en UNIX","No."]],"Ventaja: aprovecha todos los bloques.");
+c(A,"¿Cómo funciona la lista ligada con índice?","Una tabla con un registro por bloque: libre u ocupado y cuál es el siguiente",[["Cada bloque apunta al siguiente","Eso es lista ligada simple."],["Bloques seguidos","Adyacente."],["Un i-nodo por archivo","UNIX."]],"El directorio guarda el bloque inicial.");
+c(A,"¿Qué sistema usa Microsoft para localizar los bloques?","FAT (lista ligada con índice)",[["i-nodos","UNIX."],["Asignación adyacente","No."],["MBR","Es el arranque."]],"FAT = File Allocation Table.");
+c(A,"Ventaja de la FAT frente a la lista ligada simple:","Todo el bloque es para datos y el acceso es más rápido (tabla en memoria)",[["No usa memoria","Sí usa, ese es su problema."],["Evita usar sectores","No."],["No necesita directorio","No."]],"Inconveniente: la tabla ocupa memoria y puede desbordarla.");
+c(A,"Inconveniente de la FAT:","La tabla debe estar en memoria y puede ocupar muchísimo",[["Fragmenta el disco","Eso es la adyacente."],["Cada bloque pierde capacidad","Eso es lista ligada simple."],["Es solo para UNIX","No."]],"Esa memoria no está disponible para otros procesos.");
+c(A,"¿Qué diferencia FAT16 de FAT32?","Si la tabla se direcciona con 16 o con 32 bits",[["El tipo de disco","No."],["El SO","No."],["El tamaño del sector","No."]],"Más bits = más bloques direccionables.");
+c(A,"¿Qué usa UNIX para localizar los bloques?","i-nodos",[["FAT","Microsoft."],["Adyacente","No."],["MBR","No."]],"Una pequeña tabla por archivo.");
+c(A,"¿Qué contiene un i-nodo?","Los atributos y las direcciones en disco de los bloques del archivo",[["Solo el nombre","No."],["La FAT entera","No."],["El MBR","No."]],"Las últimas entradas se reservan para archivos grandes.");
+c(A,"Si un archivo no cabe en las entradas del i-nodo, se usa primero...","Un bloque indirecto",[["Un bloque triplemente indirecto","Es el último recurso."],["La FAT","No."],["Otro i-nodo raíz","No."]],"Orden: indirecto → doblemente → triplemente indirecto.");
+c(A,"¿Qué hace UNIX lo primero al abrir un archivo?","Cargar su i-nodo en memoria",[["Leer la FAT","Es Microsoft."],["Leer el MBR","Es al arrancar."],["Borrar el caché","No."]],"Así la lectura es más rápida.");
+c(A,"¿Qué significa el comodín *?","Cualquier texto antes de la extensión",[["Un solo carácter","Es ?."],["Archivo oculto","No."],["La raíz","No."]],"*.TXT = todos los txt (extra del PDF).");
+c(A,"¿Qué archivos identifica A??.TXT?","Los .txt de 3 caracteres que empiezan por A",[["Todos los .txt que empiezan por A","Eso sería A*.TXT."],["Los de 2 caracteres","No."],["Los ocultos","No."]],"? = un carácter obligatorio (extra del PDF).");
+c(A,"¿Para qué sirve el PATH?","Para buscar un programa en otras rutas si no está en el directorio actual",[["Para renombrar","No."],["Para borrar","No."],["Para ocultar","No."]],"Extra del PDF.");
+c(A,"Si escribes PEPE sin extensión, ¿en qué orden prueba según tu PDF?",".com → .exe → .msc → .bat",[[".exe → .com → .bat",".com va primero."],[".bat → .exe → .com","Al revés."],["Solo .exe","No."]],"Extra del PDF.");
+var cur=[],i=0,score=0,sec="Todos",wrong=[],done=false,app=document.getElementById("app");
+function shuffle(a){a=a.slice();for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}return a}
+function pick(s){return s==="Todos"?Q:Q.filter(function(q){return q.s===s})}
+function secs(){var s=["Todos"];Q.forEach(function(q){if(s.indexOf(q.s)<0)s.push(q.s)});return s}
+function fresh(l){return l.map(function(q){var c=Object.assign({},q);delete c.o;return c})}
+function start(list,name){cur=fresh(list);i=0;score=0;wrong=[];sec=name;render()}
+function chips(){return '<div class="chips">'+secs().map(function(s){return '<button class="chip'+(s===sec?' on':'')+'" data-s="'+s+'">'+s+' ('+pick(s).length+')</button>'}).join('')+'</div>'}
+function render(){
+ if(i>=cur.length){var p=Math.round(100*score/cur.length);
+  app.innerHTML=chips()+'<div class="sc"><b style="font-weight:500">Resultado: '+score+' de '+cur.length+' ('+p+'%)</b><br>'+(p>=80?'Muy bien, vas sobrado.':p>=60?'Aprobado, repasa las falladas.':'Repasa los apartados que fallaste antes de mañana.')+(wrong.length?'<br><br>Falladas:<br>'+wrong.map(function(q){return '• ['+q.s+'] '+q.q+' → '+q.r}).join('<br>'):'')+'</div><div class="row"><button id="again">Repetir</button>'+(wrong.length?'<button id="redo">Practicar solo las falladas</button>':'')+'</div>';
+  bind();return}
+ var q=cur[i];q.o=q.o||shuffle([[q.r,null]].concat(q.w));done=false;
+ app.innerHTML=chips()+'<div class="bar"><i style="width:'+(100*i/cur.length)+'%"></i></div><div class="meta"><span>'+q.s+' · pregunta '+(i+1)+' de '+cur.length+'</span><span>Aciertos: '+score+'</span></div><p class="q">'+q.q+'</p><div id="opts">'+q.o.map(function(o,k){return '<button class="opt" data-k="'+k+'">'+o[0]+'</button>'}).join('')+'</div><div id="fb"></div>';
+ bind()}
+function bind(){
+ app.querySelectorAll(".chip").forEach(function(b){b.onclick=function(){start(shuffle(pick(b.dataset.s)),b.dataset.s)}});
+ app.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){answer(+b.dataset.k)}});
+ var a=document.getElementById("again");if(a)a.onclick=function(){start(shuffle(pick(sec)),sec)};
+ var r=document.getElementById("redo");if(r)r.onclick=function(){start(shuffle(wrong),sec)}}
+function answer(k){if(done)return;done=true;var q=cur[i],o=q.o[k],good=o[1]===null;
+ if(good)score++;else wrong.push(q);
+ app.querySelectorAll(".opt").forEach(function(b,n){var x=q.o[n];b.disabled=true;
+  if(x[1]===null){b.className="opt ok";b.innerHTML=x[0]+'<span class="why">Correcta</span>'}
+  else{if(n===k)b.className="opt bad";b.innerHTML=x[0]+'<span class="why">'+(n===k?'Tu respuesta. ':'')+'Por qué no: '+x[1]+'</span>'}});
+ document.getElementById("fb").innerHTML='<div class="fb"><b>'+(good?'Correcto.':'Fallaste.')+'</b> '+(good?'':'Elegiste «'+o[0]+'»: '+o[1]+' La correcta era «'+q.r+'».')+'<br><br>'+q.e+'</div><button id="nx">'+(i+1<cur.length?'Siguiente':'Ver resultado')+'</button>';
+ document.getElementById("nx").onclick=function(){i++;render()}}
+start(shuffle(Q),"Todos");
+</script>
+<details><summary>Mapa de estudio</summary>
+<h2 class="sr-only">Mapa de estudio de Sistemas Informáticos según los apuntes del profesor, con extras del PDF marcados</h2>
+<style>
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:0 0 14px}
+.c{border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5}
+.c b{display:block;font-weight:500;font-size:14px;margin-bottom:4px}
+.h{font-size:13px;color:var(--text-secondary);margin:14px 0 6px}
+.n{font-size:11px;padding:1px 7px;border-radius:999px;background:var(--bg-warning);color:var(--text-warning);margin-left:6px;font-weight:400}
+.p{background:#EEEDFE;color:#3C3489}.p b{color:#26215C}
+.t{background:#E1F5EE;color:#085041}.t b{color:#04342C}
+.a{background:#FAEEDA;color:#633806}.a b{color:#412402}
+.o{background:#FAECE7;color:#712B13}.o b{color:#4A1B0C}
+.k{background:#F1EFE8;color:#444441}.k b{color:#2C2C2A}
+.s{background:var(--bg-success);color:var(--text-success)}.s b{color:var(--text-success)}
+@media (prefers-color-scheme:dark){.p{background:#3C3489;color:#CECBF6}.p b{color:#EEEDFE}.t{background:#085041;color:#9FE1CB}.t b{color:#E1F5EE}.a{background:#633806;color:#FAC775}.a b{color:#FAEEDA}.o{background:#712B13;color:#F5C4B3}.o b{color:#FAECE7}.k{background:#444441;color:#D3D1C7}.k b{color:#F1EFE8}}
+code{font-family:var(--font-mono);font-size:12px}
+.leg{font-size:12px;color:var(--text-secondary);margin:0 0 8px}
+</style>
+<p class="leg">Base: apuntes del profe (Word). <span class="n">extra PDF</span> = solo en tu PDF. Verde = criterio del profe en lo que se contradecía.</p>
+<p class="h">1. Generaciones</p>
+<div class="g">
+<div class="c k"><b>1ª · Tubos de vacío</b>Mark I (Harvard 1944, relés) · ENIAC (Pensilvania 1945, balística) · UNIVAC-1 comercial, alfanumérico</div>
+<div class="c p"><b>2ª · Transistor</b>Inventado 1948, máquinas desde 1959. Barato, pequeño, poco calor</div>
+<div class="c t"><b>3ª · Circuitos integrados</b>1964 · multiprogramación, multiproceso, familias</div>
+<div class="c a"><b>4ª · Redes</b>5ª y 6ª: internet y multinúcleo</div>
+</div>
+<p class="h">2. Componentes</p>
+<div class="g">
+<div class="c k"><b>Periféricos</b>Entrada · salida · almacenamiento externo (por cables)</div>
+<div class="c p"><b>CPU</b>Unidad de control + ALU + memoria principal</div>
+<div class="c t"><b>Micro → placa → ordenador</b>Chip con CPU → + RAM, ROM, E/S (puertos) → + periféricos</div>
+<div class="c a"><b>Von Neumann<span class="n">extra PDF</span></b>Nombre del esquema de 6 componentes: E, S, UC, UAL, MP</div>
+</div>
+<p class="h">3. Buses y canales</p>
+<div class="g">
+<div class="c k"><b>Datos</b>Entrada → memoria → ALU → memoria → salida</div>
+<div class="c k"><b>Instrucciones</b>Entrada → memoria → unidad de control</div>
+<div class="c k"><b>Control</b>Sincroniza todas las unidades</div>
+<div class="c t"><b>Ráfagas = selector</b><code>AAA BBB CCC</code> una unidad cada vez</div>
+<div class="c t"><b>Múltiple = multiplexor</b><code>CBA CBA CBA</code> un byte de cada una</div>
+</div>
+<p class="h">4. Memoria</p>
+<div class="g">
+<div class="c t"><b>Posiciones y direcciones</b>Apartados de correos. Desde 0, un dato por posición</div>
+<div class="c t"><b>Escribir / leer</b>Escribir destruye lo anterior; leer copia</div>
+<div class="c a"><b>Palabra</b>Máximo de información en una operación</div>
+<div class="c a"><b>Fija · variable · octeto</b>Palabra direccional · caracteres direccionales · 4 octetos (media 2, doble 8)</div>
+<div class="c o"><b>Núcleos magnéticos</b>1 núcleo = 1 bit. 2 hilos i/2 escriben, sensor lee, inhibidor restaura</div>
+</div>
+<p class="h">5. Binario<span class="n">extra PDF</span></p>
+<div class="g">
+<div class="c p"><b>Decimal → binario</b>Divide entre 2: último cociente + restos de abajo arriba. 9 → <code>1001</code></div>
+<div class="c p"><b>Binario → decimal</b>Bit × 2^posición desde 0 a la derecha. <code>1011010</code> = 90</div>
+<div class="c p"><b>Unidades</b>1 byte = 8 bits · 1 KB = 1024 B · 1 MB = 1024 KB</div>
+</div>
+<p class="h">6. ALU, lógica y biestables</p>
+<div class="g">
+<div class="c o"><b>ALU</b>Sumadores, registros, comparadores, complementadores, mux/demux</div>
+<div class="c o"><b>Puertas</b>AND serie · OR paralelo · XOR distintas · NOT invierte. NAND/NOR/XNOR negadas<span class="n">extra PDF</span></div>
+<div class="c k"><b>Boole</b>Idempotencia, involución, conmutativa, asociativa, distributiva, absorción, De Morgan</div>
+<div class="c s"><b>Nivel: RS y D · flanco: JK y T</b>Truco: JoTa por flanco. Asíncronos solo control (RS); síncronos + reloj CLK</div>
+<div class="c k"><b>Flancos</b>Subida 0→1 · bajada 1→0. Los de flanco arreglan los de nivel</div>
+</div>
+<p class="h">7. Unidad de control</p>
+<div class="g">
+<div class="c p"><b>Función</b>Recoger, interpretar y ejecutar</div>
+<div class="c p"><b>Elementos</b>Registros (biestables), codificador, decodificador, contadores, reloj</div>
+<div class="c p"><b>Codificador / decodificador</b>Decimal → binario / binario → decimal</div>
+</div>
+<p class="h">8. Discos</p>
+<div class="g">
+<div class="c p"><b>Geometría</b>Superficies → pistas → sectores. Cilindro = pistas bajo el brazo</div>
+<div class="c p"><b>Capacidad</b>Superficies × cilindros × sectores/pista × bytes/sector</div>
+<div class="c a"><b>Acceso</b>Búsqueda + latencia, en ms</div>
+<div class="c s"><b>Cabeza</b>A 10⁻⁴ mm, disco a más de 100 km/h. Extraíbles: se apoya</div>
+<div class="c s"><b>DAT</b>Las únicas de acceso secuencial</div>
+<div class="c o"><b>MBR</b>Sector 0 → SO. Resto: área de datos + localización (FAT)</div>
+</div>
+<p class="h">9. Archivos</p>
+<div class="g">
+<div class="c k"><b>Atributos</b>S sistema · H oculto · R lectura · A/M modificado</div>
+<div class="c k"><b>Rutas</b>Absoluta desde raíz · relativa desde aquí. <code>.</code> actual, <code>..</code> padre</div>
+<div class="c a"><b>Bloques</b>Adyacente · lista ligada (NULL) · FAT (16/32) · i-nodos UNIX</div>
+<div class="c t"><b>Comodines y PATH<span class="n">extra PDF</span></b><code>*</code> texto · <code>?</code> un carácter · .com → .exe → .msc → .bat</div>
+</div>
+</details></body></html>
